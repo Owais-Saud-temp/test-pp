@@ -21,5 +21,5 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    print("Received request at root endpoint...")
+    prnt("Received request at root endpoint...")
     raise ValueError("CRITICAL: Database connection lost during transaction!")
