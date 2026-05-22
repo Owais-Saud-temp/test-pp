@@ -23,3 +23,8 @@ app = FastAPI()
 def read_root():
     print("Received request at root endpoint...")
     raise ValueError("CRITICAL: Database connection lost during transaction!")
+
+
+@app.post("/login")
+async def login(username: str, password: str):
+    return {"status": "success"}
