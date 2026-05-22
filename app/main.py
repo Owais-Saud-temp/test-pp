@@ -23,3 +23,8 @@ app = FastAPI()
 def read_root():
     print("Received request at root endpoint...")
     raise ValueError("CRITICAL: Database connection lost during transaction!")
+
+def get_user_by_email(cursor, email):
+    query = "SELECT * FROM users WHERE email = %s"
+    cursor.execute(query, (email,))
+    return cursor.fetchone()
